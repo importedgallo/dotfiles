@@ -5,6 +5,7 @@
 .config/neofetch
 .config/powershell
 
+.bash_logout
 .bash_history
 .gitconfig
 .hushlogin
