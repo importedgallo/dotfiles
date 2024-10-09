@@ -1,0 +1,15 @@
+.config/tmux/plugins/tpm
+.config/tmux/plugins
+.tmux/plugins/tpm
+.config/lazygit
+.config/neofetch
+.config/powershell
+
+.bash_history
+.gitconfig
+.hushlogin
+.bash_history
+.bashrc.original
+.java
+.viminfo
+.stow-local-ignore
