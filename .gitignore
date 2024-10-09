@@ -4,6 +4,7 @@
 .config/lazygit
 .config/neofetch
 .config/powershell
+.bash-git-prompt
 
 .bash_logout
 .bash_history
