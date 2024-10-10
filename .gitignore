@@ -6,6 +6,7 @@
 .config/powershell
 .bash-git-prompt
 
+.config/htop
 .bash_logout
 .bash_history
 .gitconfig
