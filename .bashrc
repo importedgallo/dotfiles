@@ -144,6 +144,10 @@ source "$OSH"/oh-my-bash.sh
 # alias ohmybash="mate ~/.oh-my-bash"
 
 # tmux on start up
+# checks for conditions
+# 	1. if tmux exists on the system
+# 	2. if we're in an interactive shell
+# 	3. makes tmux not run within itself
 if command -v tmux &> /dev/null && [ -n "$PS1" ] && [[ ! "$TERM" =~ screen ]] && [[ ! "$TERM" =~ tmux ]] && [ -z "$TMUX" ]; then
   exec tmux
 fi
