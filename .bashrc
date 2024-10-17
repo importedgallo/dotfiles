@@ -148,9 +148,11 @@ source "$OSH"/oh-my-bash.sh
 # 	1. if tmux exists on the system
 # 	2. if we're in an interactive shell
 # 	3. makes tmux not run within itself
+
 if command -v tmux &> /dev/null && [ -n "$PS1" ] && [[ ! "$TERM" =~ screen ]] && [[ ! "$TERM" =~ tmux ]] && [ -z "$TMUX" ]; then
   exec tmux
 fi
+
 
 # Set up fzf key bindings and fuzzy completion
 # eval "$(fzf --bash)"
