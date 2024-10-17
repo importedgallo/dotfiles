@@ -153,3 +153,8 @@ if command -v tmux &> /dev/null && [ -n "$PS1" ] && [[ ! "$TERM" =~ screen ]] &&
   exec tmux
 fi
 
+
+# Set up fzf key bindings and fuzzy completion
+# eval "$(fzf --bash)"
+
+[ -f ~/.fzf.bash ] && source ~/.fzf.bash
