@@ -26,5 +26,6 @@ alias gs='git status'
 alias bat='batcat'
 
 #fzf
-alias se='nvim $(fzf -m --preview="batcat --color=always {}")'
+alias f='fzf -m --preview="batcat --color=always {}"'
+alias fe='nvim $(fzf -m --preview="batcat --color=always {}")'
 
