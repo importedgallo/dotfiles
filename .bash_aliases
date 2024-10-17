@@ -21,3 +21,10 @@ alias h='cd $HOME/'
 # git
 alias lazygit='go run ~/lazygit/main.go' #broken
 alias gs='git status'
+
+# bat
+alias bat='batcat'
+
+#fzf
+alias se='nvim $(fzf -m --preview="batcat --color=always {}")'
+
