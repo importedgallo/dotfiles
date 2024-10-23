@@ -1,5 +1,5 @@
 # ls
-alias l='lsd'
+alias l=lsd
 alias ls='lsd -l'
 alias ll='lsd -la'
 alias la='lsd -a'
@@ -21,11 +21,15 @@ alias h='cd $HOME/'
 # git
 alias lazygit='go run ~/lazygit/main.go' #broken
 alias gs='git status'
+<<<<<<< HEAD
 alias branches='git branch -a'
+=======
+alias glog="git log --graph --topo-order --pretty='%w(100,0,6)%C(yellow)%h%C(bold)%C(black)%d %C(cyan)%ar %C(green)%an%n%C(bold)%C(white)%s %N' --abbrev-commit"
+>>>>>>> 0c436e8e5e7b0c1ca11a35be7de958c36ce657b4
 
 # bat
 alias bat='batcat'
 
 #fzf
-alias se='nvim $(fzf -m --preview="batcat --color=always {}")'
-
+alias f='fzf -m --preview="batcat --color=always {}"'
+alias fe='nvim $(fzf -m --preview="batcat --color=always {}")'
