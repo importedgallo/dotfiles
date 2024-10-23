@@ -21,6 +21,7 @@ alias h='cd $HOME/'
 # git
 alias lazygit='go run ~/lazygit/main.go' #broken
 alias gs='git status'
+alias branches='git branch -a'
 
 # bat
 alias bat='batcat'
