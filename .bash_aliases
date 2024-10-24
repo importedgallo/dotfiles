@@ -1,8 +1,7 @@
 # ls
-alias l=lsd
-alias ls='lsd -l'
-alias ll='lsd -la'
-alias la='lsd -a'
+alias ls='lsd -l --no-symlink'
+alias ll='lsd -la --no-symlink'
+alias la='lsd -a --no-symlink'
 alias lt='lsd --tree'
 
 # system
