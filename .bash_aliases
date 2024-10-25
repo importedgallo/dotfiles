@@ -16,7 +16,8 @@ alias eb='nvim $HOME/.bashrc'
 alias et='nvim $HOME/.config/tmux/tmux.conf'
 alias ea='nvim $HOME/.bash_aliases'
 alias h='cd $HOME/'
-
+alias ..='cd ..'
+alias ...='cd ../..'
 # git
 alias lazygit='go run ~/lazygit/main.go' #broken
 alias gs='git status'
