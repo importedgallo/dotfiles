@@ -3,6 +3,7 @@ alias ls='lsd -l --no-symlink'
 alias ll='lsd -la --no-symlink'
 alias la='lsd -a --no-symlink'
 alias lt='lsd --tree'
+alias a='lsd -a --no-symlink'
 
 # system
 alias c='clear'
