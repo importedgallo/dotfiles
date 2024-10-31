@@ -5,6 +5,17 @@ if not vim.loop.fs_stat(lazypath) then
 end
 vim.opt.rtp:prepend(lazypath)
 
+-----------------
+-- GEN OPTIONS --
+-----------------
+vim.opt.wrap = false
+vim.opt.splitbelow = true
+vim.opt.splitright = true
+vim.opt.expandtab = true
+vim.opt.tabstop = 4
+vim.opt.clipboard = "unnamedplus"
+vim.opt.relativenumber = true
+vim.opt.scrolloff = 999
 
 -- Add plugins
 require('lazy').setup({
