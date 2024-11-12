@@ -4,6 +4,7 @@ alias ll='lsd -la --no-symlink'
 alias la='lsd -A --no-symlink'
 alias lt='lsd --tree'
 alias a='lsd -A --no-symlink'
+alias andre='cd /mnt/c/Users/andre'
 
 # system
 alias c='clear'
