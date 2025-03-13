@@ -382,7 +382,7 @@ require('mason-lspconfig').setup()
 			require("mason-lspconfig").setup()
 
 			-- automatically install ensure_installed servers
-			require("mason-lspconfig").setup_handlers({
+						require("mason-lspconfig").setup_handlers({
 				-- Will be called for each installed server that doesn't have
 				-- a dedicated handler.
 				--
@@ -397,7 +397,8 @@ require('mason-lspconfig').setup()
 						capabilities = capabilities,
 					})
 				end,
-			})
+
+      })
 
 -- Add nvim-lspconfig plugin
 local lspconfig = require 'lspconfig'
@@ -421,7 +422,7 @@ local capabilities = vim.lsp.protocol.make_client_capabilities()
 capabilities = require('cmp_nvim_lsp').default_capabilities(capabilities)
 
 -- Enable the following language servers
-local servers = { 'clangd', 'rust_analyzer', 'pyright', 'ts-ls', 'cssls', 'html' }
+local servers = { 'clangd', 'rust_analyzer', 'pyright', 'cssls', 'html' }
 for _, lsp in ipairs(servers) do
   lspconfig[lsp].setup {
     on_attach = on_attach,
