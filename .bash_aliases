@@ -33,3 +33,5 @@ alias bat='batcat'
 #fzf
 alias f='fzf -m --preview="batcat --color=always {}"'
 alias fe='nvim $(fzf -m --preview="batcat --color=always {}")'
+
+alias liveserver='browser-sync start --server --files "*.html, *.css, *.js"'
