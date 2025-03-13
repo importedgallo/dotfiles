@@ -36,6 +36,14 @@ require('lazy').setup({
   'williamboman/mason-lspconfig.nvim', -- ibid
   'folke/neodev.nvim', -- Lua language server configuration for nvim
   'xiyaowong/transparent.nvim',
+  {
+  'mattn/emmet-vim',
+  ft = {'html', 'css', 'javascript', 'typescript', 'javascriptreact', 'typescriptreact'}
+  },
+  {
+  'MunifTanjim/prettier.nvim',
+  dependencies = {'neovim/nvim-lspconfig', 'jose-elias-alvarez/null-ls.nvim'},
+  },
     {
     'abecodes/tabout.nvim',
     lazy = false,
@@ -104,6 +112,15 @@ require('lazy').setup({
     },
   },
 
+  {
+  'windwp/nvim-ts-autotag',
+  dependencies = 'nvim-treesitter/nvim-treesitter',
+  config = function() 
+    require('nvim-ts-autotag').setup()
+  end,
+},
+
+
 
   "christoomey/vim-tmux-navigator",
   cmd = {
@@ -121,11 +138,15 @@ require('lazy').setup({
     { "<c-\\>", "<cmd><C-U>TmuxNavigatePrevious<cr>" },
   },
  
-
+{
+  "pmizio/typescript-tools.nvim",
+  dependencies = { "nvim-lua/plenary.nvim", "neovim/nvim-lspconfig" },
+  opts = {},
+},
 
   { -- Autocompletion
     'hrsh7th/nvim-cmp',
-    dependencies = { 'hrsh7th/cmp-nvim-lsp', 'L3MON4D3/LuaSnip', 'saadparwaiz1/cmp_luasnip' },
+    dependencies = { 'hrsh7th/cmp-nvim-lsp', 'L3MON4D3/LuaSnip', 'saadparwaiz1/cmp_luasnip', 'hrsh7th/cmp-buffer', 'hrsh7th/cmp-path', 'hrsh7th/cmp-cmdline' },
   },
   -- Fuzzy Finder (files, lsp, etc)
   { 'nvim-telescope/telescope.nvim', version = '*', dependencies = { 'nvim-lua/plenary.nvim' } },
@@ -135,6 +156,8 @@ require('lazy').setup({
     build = 'make',
   },
 }, {})
+
+
 
 --Transparent plugin
  -- Optional, you don't have to run setup.
@@ -278,6 +301,10 @@ require('nvim-treesitter.configs').setup {
   highlight = {
     enable = true, -- false will disable the whole extension
   },
+
+  ensure_installed = { "javascript", "typescript", "tsx", "html", "css" },
+
+
   incremental_selection = {
     enable = true,
     keymaps = {
@@ -394,7 +421,7 @@ local capabilities = vim.lsp.protocol.make_client_capabilities()
 capabilities = require('cmp_nvim_lsp').default_capabilities(capabilities)
 
 -- Enable the following language servers
-local servers = { 'clangd', 'rust_analyzer', 'pyright', 'tsserver' }
+local servers = { 'clangd', 'rust_analyzer', 'pyright', 'ts-ls', 'cssls', 'html' }
 for _, lsp in ipairs(servers) do
   lspconfig[lsp].setup {
     on_attach = on_attach,
@@ -414,6 +441,19 @@ lspconfig.lua_ls.setup {
       },
     },
   },
+}
+
+
+-- Advanced TypeScript setup using typescript-tools.nvim (more modern than just tsserver)
+require("typescript-tools").setup {
+  on_attach = on_attach,
+  capabilities = capabilities,
+  settings = {
+    -- spawn additional tsserver for large projects for better performance
+    separate_diagnostic_server = true,
+    -- enables experimental auto-import
+    complete_function_calls = true,
+  }
 }
 
 -- nvim-cmp setup
@@ -458,6 +498,8 @@ cmp.setup {
   sources = {
     { name = 'nvim_lsp' },
     { name = 'luasnip' },
+    {name = 'buffer'},
+    {name = 'path'},
   },
 }
 -- vim: ts=2 sts=2 sw=2 et
