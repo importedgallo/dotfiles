@@ -16,6 +16,9 @@ vim.opt.tabstop = 4
 vim.opt.clipboard = "unnamedplus"
 vim.opt.relativenumber = true
 vim.opt.scrolloff = 999
+vim.opt.softtabstop=0
+vim.opt.shiftwidth=4
+
 
 -- Add plugins
 require('lazy').setup({
